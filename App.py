@@ -1,3 +1,4 @@
+%%writefile app.py
 import streamlit as st
 
 # Türk dövlətləri üçün məlumatlar (bayraq URL-ləri və qısa məlumatlar)
@@ -146,7 +147,7 @@ def display_countries_content_streamlit(lang_code='az'):
         'kz': 'name_tr',
         'uz': 'name_tr',
         'tk': 'name_tr',
-        'kg': 'name_tr'  
+        'kg': 'name_tr'
     }
     lang_map_desc = {
         'az': 'description_az',
@@ -176,7 +177,7 @@ def display_countries_content_streamlit(lang_code='az'):
     st.markdown(f"## {lang_map_title.get(lang_code, 'Türk Dövlətləri haqqında məlumatlar')}")
 
     # Streamlit columns for a grid layout
-    cols = st.columns(3) # Display 3 cards per row, adjust as needed
+    cols = st.columns(3)
     col_idx = 0
 
     for country in countries_data:
@@ -193,7 +194,7 @@ def display_countries_content_streamlit(lang_code='az'):
                 <p style="font-size: 12px; color: #777;"><b>{official_lang_label}:</b> {country['official_language']}</p>
             </div>
             """, unsafe_allow_html=True)
-        col_idx = (col_idx + 1) % 3 # Move to the next column, wrap around after 3
+        col_idx = (col_idx + 1) % 3
 
 def display_language_learning_module_streamlit(native_lang_code, target_country_info):
     target_country_name = target_country_info['name_az']
@@ -356,5 +357,4 @@ if st.button('Paylaş (Local Development Link)', key='share_button'):
     st.info("Streamlit tətbiqini yerli şəbəkədə paylaşmaq üçün, əgər varsa, yerli IP ünvanınızı istifadə edə bilərsiniz. "
             "Public link üçün tətbiqinizi Streamlit Cloud kimi bir platformaya yerləşdirməlisiniz.")
     st.markdown("**Yerli URL:** " + st.experimental_get_query_params().get("__streamlit_server_address__", ["http://localhost:8501"]) [0])
-    st.markdown("*(Bu URL adətən yalnız yerli maşınınızda işləyir. Başqaları ilə paylaşmaq üçün deployment xidmətindən istifadə edin.)*" )
-streamlit run app.py 
+    st.markdown("*(Bu URL adətən yalnız yerli maşınınızda işləyir. Başqaları ilə paylaşmaq üçün deployment xidmətindən istifadə edin.)*")
