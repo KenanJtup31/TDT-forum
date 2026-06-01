@@ -1,6 +1,3 @@
-# Streamlit tətbiqini Colab-da işlətmək üçün zəruri kitabxanaları quraşdıraq
-!pip install streamlit pyngrok -q
-
-# Pyngrok üçün Authtoken tələb oluna bilər. Əgər yoxdursa, ngrok.com saytında qeydiyyatdan keçib əldə edə bilərsiniz.
-# auth_token = "3DxE1YsSiMPxoVBmXf9SXLNxGQ1_FQdewVGZ7kTUUEyk8ktU"  # Buraya öz ngrok auth tokeninizi daxil edin
-# !ngrok authtoken $auth_token
+%%writefile requirements.txt
+streamlit
+pyngrok
