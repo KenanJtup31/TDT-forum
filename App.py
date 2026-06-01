@@ -357,3 +357,4 @@ if st.button('Paylaş (Local Development Link)', key='share_button'):
             "Public link üçün tətbiqinizi Streamlit Cloud kimi bir platformaya yerləşdirməlisiniz.")
     st.markdown("**Yerli URL:** " + st.experimental_get_query_params().get("__streamlit_server_address__", ["http://localhost:8501"]) [0])
     st.markdown("*(Bu URL adətən yalnız yerli maşınınızda işləyir. Başqaları ilə paylaşmaq üçün deployment xidmətindən istifadə edin.)*" )
+streamlit run app.py 
